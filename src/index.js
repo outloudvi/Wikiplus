@@ -12,7 +12,7 @@ import Constants from "./utils/constants";
 import i18n from "./utils/i18n";
 import "./wikiplus.css";
 
-$(async () => {
+const loadWikiplus = async () => {
     const Pages = {};
     const isNewPage = $(".noarticletext").length > 0 && Constants.articleId === 0;
 
@@ -181,4 +181,8 @@ $(async () => {
     UI.insertSimpleRedirectButton(handleSimpleRedirectButtonClicked);
     UI.insertSettingsPanelButton(handleSettingsButtonClicked);
     UI.bindPreloadEvents(handlePreload);
+};
+
+$(() => {
+    loadWikiplus();
 });
